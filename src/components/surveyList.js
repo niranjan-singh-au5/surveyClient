@@ -70,7 +70,6 @@ function Survey({ survey, employee, employeeId, empID, isAssigned, assignedSurve
     </div>)}
 
 const stateToProps = (state) => {
-  console.log(state)
   return {
     survey: state.survey.filteredSurvey,
     empID: state.employee.empID,

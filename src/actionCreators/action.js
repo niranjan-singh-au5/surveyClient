@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export const getEmployee = (val) =>{
   
-  let data =  axios.get("http://localhost:3010/api/employee")
+  let data =  axios.get("/api/employee")
   return (dispatch)=>{
     data.then((res)=>{
       if(val){
@@ -20,7 +20,7 @@ export const getEmployee = (val) =>{
 //surver rendering
 
 export const getSurvey = () =>{
-    let data =  axios.get("http://localhost:3010/api/survey")
+    let data =  axios.get("/api/survey")
     return (dispatch)=>{
       data.then((res)=>{
           dispatch({
@@ -34,7 +34,7 @@ export const getSurvey = () =>{
 //fetching specific employee id
 export const employeeId = (id)=>{
   
- let data = axios.get(`http://localhost:3010/api/employee/${id}`)
+ let data = axios.get(`/api/employee/${id}`)
   return (dispatch) =>{
     data.then((res)=>{
       dispatch({
@@ -49,8 +49,8 @@ export const employeeId = (id)=>{
 //assigning survey
 
 export const assignToSurvey = (survey,empID) =>{
-  console.log(survey,empID)
-   let data =  axios.post(`http://localhost:3010/api/employee/${empID}`,{
+
+   let data =  axios.post(`/api/employee/${empID}`,{
         "id" : survey._id
       })
   return data
@@ -59,7 +59,7 @@ export const assignToSurvey = (survey,empID) =>{
 //delete Survey
 
 export const deleteSurvey = (survey,empID) =>{
-   let data =  axios.delete(`http://localhost:3010/api/employee/${survey._id}/${empID}`)
+   let data =  axios.delete(`/api/employee/${survey._id}/${empID}`)
   return data
 
    

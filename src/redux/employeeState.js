@@ -7,10 +7,10 @@ function employeeReducer(state={selectEmployee:'',employee:[]}, action){
         case "get-employees":
             stateCopy.employee = action.payload
             stateCopy.empID = action.payload[0]._id
-            console.log(action.payload)
             return stateCopy
        case 'current-employee':
         stateCopy.empID = action.id
+        return stateCopy
          default:
              return stateCopy
     }
